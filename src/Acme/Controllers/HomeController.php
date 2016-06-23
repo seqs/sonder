@@ -8,13 +8,10 @@ class HomeController extends BaseController
          // Sample log message
          $this->ci->logger->info("Slim-Skeleton '/' route");
 
-         // $account = new Account($this->ci->db);
+         // $data = ["username" => "foo"];
+         // $account = new Account($this->ci);
          // $account->create($data);
-         $this->ci->db->insert("account", [
-             "username" => "foo",
-         ]);
-
-         // $this->ci->logger->debug($this->db->last_query());
+         // $this->ci->logger->debug($this->ci->db->last_query());
 
          // Render index view
          $args['_layout'] = '_layout.phtml';

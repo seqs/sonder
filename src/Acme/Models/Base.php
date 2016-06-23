@@ -3,10 +3,10 @@ namespace Acme\Models;
 
 class Base
 {
-   protected $db;
+   protected $ci;
 
-   public function __construct($db)
+   public function __construct($ci)
    {
-       $this->db = $db;
+       $this->ci = $ci;
    }
 }
