@@ -19,5 +19,11 @@
     },
     "autoload": {
         "psr-4": {"Acme\\": "src/Acme/"}
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
     }
 }

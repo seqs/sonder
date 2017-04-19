@@ -7,10 +7,10 @@ return [
         // Database
         'db' => [
             'database_type' => 'mysql',
-            'database_name' => 'sonder',
+            'database_name' => 'sonder_development',
             'server' => 'localhost',
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
             'charset' => 'utf8'
         ],
 

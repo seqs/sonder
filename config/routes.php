@@ -1,4 +1,4 @@
 <?php
 // Routes
-$app->get('/[{name}]', '\Acme\Controllers\HomeController');
-
+$app->get('/', '\Acme\Controllers\HomeController');
+$app->get('/portal', '\Acme\Controllers\PortalController');
