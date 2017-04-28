@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><?php $_e('Sonder'); ?></title>
+
+    <link href="/node_modules/ratchet-npm/dist/css/ratchet.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/agent.css" rel="stylesheet" type="text/css">
+
+    <?php echo $this->template('_base_scripts.phtml'); ?>
+</head>
+<body>
+
+<div id="barba-wrapper">
+  <div class="barba-container">
+    <nav class="bar bar-tab">
+        <a class="tab-item" href="#/">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a class="tab-item" href="#">
+            <span class="icon icon-star-filled"></span>
+            <span class="tab-label">已售票</span>
+        </a>
+        <a class="tab-item" href="#">
+            <span class="icon icon-search"></span>
+            <span class="tab-label">搜索</span>
+        </a>
+        <a class="tab-item" href="#/login">
+            <span class="icon icon-person"></span>
+            <span class="tab-label">个人资料</span>
+        </a>
+        <a class="tab-item" href="#">
+            <span class="icon icon-gear"></span>
+            <span class="tab-label">设置</span>
+        </a>
+    </nav>
+
+    <div id="content">
+        <?php if (isset($_content)) echo $_content; ?>
+    </div> <!-- /content -->
+
+  </div>
+</div>
+
+</body>
+</html>

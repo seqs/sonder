@@ -5,9 +5,9 @@ date_default_timezone_set('PRC');
 $container = $app->getContainer();
 
 // view renderer
-$container['renderer'] = function ($c) {
+$container['view'] = function ($c) {
     $settings = $c->get('settings')['renderer'];
-    return new Acme\Views\Renderer($settings['template_path']);
+    return new Acme\Helpers\Renderer($settings['template_path']);
 };
 
 // monolog
@@ -26,3 +26,7 @@ $container['db'] = function ($c) {
     return $database;
 };
 
+// Register provider
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages();
+};

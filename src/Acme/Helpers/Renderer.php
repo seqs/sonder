@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2011-2015 Josh Lockhart
  * @license   https://github.com/slimphp/PHP-View/blob/master/LICENSE.md (MIT License)
  */
-namespace Acme\Views;
+namespace Acme\Helpers;
 
 use Psr\Http\Message\ResponseInterface;
 
@@ -69,12 +69,12 @@ class Renderer
             throw new \InvalidArgumentException("Duplicate template key found");
         }
 
-        $output = $this->template($this->templatePath . $template, $data);
+        $output = $this->template($template, $data);
 
         // layouts
         if (isset($data['_layout']) && $data['_layout']) {
             $data['_content'] = $output;
-            $output = $this->template($this->templatePath . $data['_layout'], $data);
+            $output = $this->template($data['_layout'], $data);
         }
 
         $response->getBody()->write($output);
@@ -82,16 +82,17 @@ class Renderer
         return $response;
     }
 
-    public function template($template, $data)
+    public function template($template, $data = [])
     {
-        if (!is_file($template)) {
-            throw new \RuntimeException("View cannot render `$template` because the template does not exist");
+        $file = $this->templatePath . $template;
+        if (!is_file($file)) {
+            throw new \RuntimeException("View cannot render `$file` because the template does not exist");
         }
 
         ob_start();
         extract($data);
         extract($this->helpers);
-        include $template;
+        include $file;
         return ob_get_clean();
     }
 }

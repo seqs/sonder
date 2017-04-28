@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><?php $_e('Sonder'); ?></title>
+
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/home.css" rel="stylesheet" type="text/css">
+
+    <?php echo $this->template('_base_scripts.phtml'); ?>
+</head>
+<body>
+
+<div id="barba-wrapper">
+  <div class="barba-container">
+    <?php if (isset($_content)) echo $_content; ?>
+  </div>
+</div>
+
+</body>
+</html>

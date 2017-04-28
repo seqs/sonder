@@ -61,27 +61,17 @@
 
 
   // Routes =======================================================================
-  var app = $.sammy('#main', function(app) {
+  var app = $.sammy('#main', function() {
     this.use('Template', 'tpl');
     this.use('Session');
 
-    app.helper('layout', function() {
-      return this.partial('/assets/tpl/portal/layout.tpl');
+    this.get('#/', function(context) {
+      this.partial('/assets/tpl/portal/index.tpl');
     });
 
-    app.helper('activePath', function(path) {
-      return this.path === path ? ' active' : '';
-    });
-
-    this.get('#/', function(ctx) {
-      ctx.layout().then(function() {
-        ctx.render('/assets/tpl/portal/index.tpl').replace('#content');
-      });
-    });
-
-    this.get('#/login', function(ctx) {
-      ctx.layout().then(function() {
-        ctx.render('/assets/tpl/portal/login.tpl').replace('#content');
+    this.get('#/login', function(context) {
+      this.partial('/assets/tpl/portal/layout.tpl', function() {
+        context.render('/assets/tpl/portal/login.tpl').replace('#content');
       });
     });
 

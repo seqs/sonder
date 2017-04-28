@@ -1,5 +1,5 @@
 <?php
-namespace Acme\Controllers;
+namespace Acme\Controllers\Admin\User;
 
 use Acme\Controllers\BaseController;
 
@@ -9,6 +9,6 @@ class RegisterController extends BaseController
     {
          // Render index view
          $args['_layout'] = '_layout.phtml';
-         return $this->ci->renderer->render($response, 'user/register.phtml', $args);
+         return $this->ci->view->render($response, 'admin/user/register.phtml', $args);
     }
 }

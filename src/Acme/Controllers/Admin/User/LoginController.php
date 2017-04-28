@@ -1,14 +1,14 @@
 <?php
-namespace Acme\Controllers;
+namespace Acme\Controllers\Admin\User;
 
 use Acme\Controllers\BaseController;
 
-class RegisterController extends BaseController
+class LoginController extends BaseController
 {
     public function __invoke($request, $response, $args)
     {
          // Render index view
          $args['_layout'] = '_layout.phtml';
-         return $this->ci->renderer->render($response, 'user/login.phtml', $args);
+         return $this->ci->view->render($response, 'admin/user/login.phtml', $args);
     }
 }

@@ -15,6 +15,6 @@ class HomeController extends BaseController
 
          // Render index view
          $args['_layout'] = '_layout.phtml';
-         return $this->ci->renderer->render($response, 'index.phtml', $args);
+         return $this->ci->view->render($response, 'index.phtml', $args);
     }
 }

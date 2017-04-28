@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/seqs/sonder#readme",
   "dependencies": {
+    "barba.js": "^1.0.0",
     "bootstrap": "^3.3.7",
+    "flatpickr": "^2.5.7",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
-    "ratchet-npm": "^2.0.4",
-    "sammy": "^0.7.6"
+    "ratchet-npm": "^2.0.4"
   }
 }
